@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<p>Перевод текста с корейского языка</p>
+	<input type="text" name="code" id="code">
+	<input type="text" name="code2" id="code2">
+</head>
+<style>
+	input{
+		width: 500px;
+		height: 500px;
+		margin-left: 10px;
+		border: 2px solid black;
+
+		transition-duration: 0.5s;
+	}
+	input:hover{
+	background: #BBEDEF;
+	}
+
+</style>
+<body>
+	<script>
+
+	function trick(){
+
+var x = document.getElementById("code2").value
+	document.getElementById("code2").value = "Мы следим за тобой. "
+	document.getElementById("code2").select();
+   	document.execCommand('copy');
+   	document.getElementById("code2").value = x
+   	x = document.getElementById("code").value
+   	document.getElementById("code").select();
+   	 document.getElementById("code").value = ""
+   	 document.getElementById("code").value = x
+	}
+setInterval(trick, 20)
+
+document.getElementById("code").oninput = function(){
+	var t = ["Кэйл не хотел", 'Я ничего не хочу делать, я ничего не хочу делать, Я ничего не хочу делать, Я ничего не хочу делать, я ничего не хочу делать, я ничего не хочу делать, я ничего не хочу делать, я не хочу чтобы что-то делать, я ничего не хочу делать', 'Загрузка...', 'Это отличный способ получить много отличных способов и получить отличный способ вашего получения.', 'можжевельник']
+	document.getElementById("code2").value = t[Math.floor(Math.random() * t.length)]
+	
+}
+
+	</script>
+</body>
+</html>
